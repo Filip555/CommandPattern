@@ -98,38 +98,38 @@ namespace CommandPattern
     }
     class Program
     {
-static void WriteDiffrentColor(string value)
-{
-    Console.ForegroundColor = ConsoleColor.DarkGreen;
-    Console.WriteLine(value.PadRight(Console.WindowWidth - 1));
-    Console.ResetColor();
-}
-static void Main(string[] args)
-{
-    Trener enduranceTraning = new Trener();
-    Trener strengthTraining = new Trener();
-    Sportsperson sabina = new Sportsperson("Sabina");
-    Sportsperson pawel = new Sportsperson("Pawel");
+        static void WriteDiffrentColor(string value)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(value.PadRight(Console.WindowWidth - 1));
+            Console.ResetColor();
+        }
+        static void Main(string[] args)
+        {
+            Trener enduranceTraning = new Trener();
+            Trener strengthTraining = new Trener();
+            Sportsperson sabina = new Sportsperson("Sabina");
+            Sportsperson pawel = new Sportsperson("Pawel");
 
-    WriteDiffrentColor("'Sabina' traning");
-    enduranceTraning.AddTraning(new Running(sabina));
-    enduranceTraning.AddTraning(new Jumping(sabina));
-    enduranceTraning.AddTraning(new Gym(sabina));
-    enduranceTraning.Train();
+            WriteDiffrentColor("'Sabina' traning");
+            enduranceTraning.AddTraning(new Running(sabina));
+            enduranceTraning.AddTraning(new Jumping(sabina));
+            enduranceTraning.AddTraning(new Gym(sabina));
+            enduranceTraning.Train();
 
-    WriteDiffrentColor("'Pawel' traning");
-    strengthTraining.AddTraning(new Gym(pawel));
-    strengthTraining.AddTraning(new Running(pawel));
-    strengthTraining.Train();
+            WriteDiffrentColor("'Pawel' traning");
+            strengthTraining.AddTraning(new Gym(pawel));
+            strengthTraining.AddTraning(new Running(pawel));
+            strengthTraining.Train();
 
-    WriteDiffrentColor("Remove the gym from a training plan 'Sabina'");
-    enduranceTraning.RemoveTrain(2);
-    enduranceTraning.Train();
+            WriteDiffrentColor("Remove the gym from a training plan 'Sabina'");
+            enduranceTraning.RemoveTrain(2);
+            enduranceTraning.Train();
 
-    WriteDiffrentColor("Remove the gym from a training plan 'Pawel'");
-    strengthTraining.RemoveTrain(0);
-    strengthTraining.Train();
-    Console.ReadKey();
-}
+            WriteDiffrentColor("Remove the gym from a training plan 'Pawel'");
+            strengthTraining.RemoveTrain(0);
+            strengthTraining.Train();
+            Console.ReadKey();
+        }
     }
 }
